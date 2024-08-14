@@ -11,7 +11,11 @@
   height: 20%;
   width: 20%;
 } 
- 
+
+.pp img{
+  height: 500;
+  width: 500;
+}
 
 .kimak{
   text-align: center;
@@ -24,7 +28,7 @@
   font-style: normal;
   color: rgb(191, 196, 229);
   text-align: center;
-  font-size: 44px;
+  font-size: 55px;
   padding: 0 20px;
     
 }
