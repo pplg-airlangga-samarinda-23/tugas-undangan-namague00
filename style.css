@@ -1,3 +1,16 @@
+
+
+.kocak{
+  background-color: rgb(26, 96, 131);
+}
+
+.tes img{
+  width: 90dvh;
+  
+}
+.tes{
+  text-align: center;
+}
 .lucu{
   text-align: center;
   margin-top: 20px;
@@ -12,10 +25,6 @@
   width: 20%;
 } 
 
-.pp img{
-  height: 500;
-  width: 500;
-}
 
 .kimak{
   text-align: center;
