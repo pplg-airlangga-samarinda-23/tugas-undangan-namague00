@@ -81,6 +81,7 @@
   transition: border 300ms, color 300ms;
   user-select: none;
   width:max-content;
+  margin: 0 auto;
 }
 
 .button p {
@@ -146,6 +147,9 @@
   display: none;
   width: 100%;
   height: auto;
+}
+.carousel-inner img.active {
+  display: block;
 }
 
 .prev,
