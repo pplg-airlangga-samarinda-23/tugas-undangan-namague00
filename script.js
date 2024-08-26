@@ -5,21 +5,37 @@ document.addEventListener('DOMContentLoaded',function(){
     const nextBtn = carousel.querySelector('.next');
     let currentIndex = 0;
 
+    let intervalId;
+
     function showImage(index) {
         images [currentIndex].classList.remove('active');
         images [index].classList.add('active');
         currentIndex = index;
     }
 
-    prevBtn.addEventListener('click',function() {
+    function prevImage (){
         let index = currentIndex - 1;
-        if (index < 0) index = images.length - 1;
+        if (index < 0) index = images.length -1;
         showImage(index);
-    });
+    }
 
-    nextBtn.addEventListener('click', function () {
+    function nextImage(){
         let index = currentIndex + 1;
         if (index >= images.length) index = 0;
         showImage(index);
-    })
+    }
+
+    function startAutoSlide(){
+        intervalId = setInterval(nextImage,3000);
+    }
+
+    prevBtn.addEventListener('cliick',function(){
+        prevImage();
+    });
+
+    nextBtn.addEventListener('click', function(){
+        nextImage();
+    });
+
+    startAutoSlide();
 });
