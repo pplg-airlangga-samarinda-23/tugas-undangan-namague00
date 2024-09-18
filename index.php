@@ -63,18 +63,20 @@
         <button class="prev">Prev</button>
         <button class="next">Next</button>
     </div>
-    <p>berikan ucapan dan doa</p>
-    <form action="insert.php" method="POST">
-        <input type="text" name="nama" placeholder="nama" required> <br>
-                <textarea name="ucapan" cols="30" row="4" placeholder="ucapan" required></textarea>
-                    <select name="keterangan" required>
-                        <option value="" selected disabled hidden>isi woii!!</option>
-                        <option value="1">ya</option>
-                        <option value="2">skip dulu</option>
-                        <option value="4">mungkin</option>
-                    </select> <br>
-            <button type="submit">KIRIM</button>
-    </form>
+    <div class="ucapan">
+        <p>berikan ucapan dan doa</p>
+            <form action="insert.php" method="POST">
+                <input type="text" name="nama" placeholder="nama" required> <br>
+                    <textarea name="ucapan" cols="30" row="4" placeholder="ucapan" required></textarea>
+                        <select name="keterangan" required>
+                            <option value="" selected disabled hidden>isi woii!!</option>
+                            <option value="1">ya</option>
+                            <option value="2">skip dulu</option>
+                            <option value="4">mungkin</option>
+                        </select> <br>
+                <button type="submit">KIRIM</button>
+            </form>
+    
     <?php
         include 'koneksi.php';
         $sql2 = "SELECT * FROM bukutamu ORDER BY id DESC";
@@ -94,6 +96,7 @@
                 }
                 $hasil -> free_result();
                 ?>
-        </div>
+            </div>
+    </div>
 </body>
 </html>
