@@ -56,14 +56,44 @@
     </div>
     <div class="carousel">
         <div class="carousel-inner">
-            <img src="gambar1.jpg" alt="image 1" class="active">
+            <img src="gambar1.jpg" alt="image 1" class="active" >
             <img src="gambar2.jpeg" alt="image 2">
             <img src="gambar3.jpeg" alt="image 3">
         </div>
         <button class="prev">Prev</button>
         <button class="next">Next</button>
     </div>
-    
+    <p>berikan ucapan dan doa</p>
+    <form action="insert.php" method="POST">
+        <input type="text" name="nama" placeholder="nama" required> <br>
+                <textarea name="ucapan" cols="30" row="4" placeholder="ucapan" required></textarea>
+                    <select name="keterangan" required>
+                        <option value="" selected disabled hidden>isi woii!!</option>
+                        <option value="1">ya</option>
+                        <option value="2">skip dulu</option>
+                        <option value="4">mungkin</option>
+                    </select> <br>
+            <button type="submit">KIRIM</button>
+    </form>
+    <?php
+        include 'koneksi.php';
+        $sql2 = "SELECT * FROM bukutamu ORDER BY id DESC";
+        $hasil =$connection -> query($sql2);
+        ?>
+        <div style="height:100px; width: 200px; overflow:auto">
+            <?php
+                while ($baris = $hasil-> fetch_row()) {
+                ?>
+                <div style="border-style:solid; border-color:grey;margin:10px;">
+                    <p style="font-weight:bold"><?= $baris[1] ?></p>
+                    <p><?=$baris[2] ?></p>
+                    <p><?=$baris[3] ?> </p>
+                </div>
+                
+                <?php
+                }
+                $hasil -> free_result();
+                ?>
+        </div>
 </body>
-
 </html>
