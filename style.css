@@ -1,5 +1,6 @@
 .tes img{
   width: 90dvh;
+  background-color: rgb(191, 207, 223);
   
 }
 .tes{
@@ -38,7 +39,7 @@
   font-family: "Grey Qo", cursive;
   font-weight: 400;
   font-style: normal;
-  color: rgb(191, 196, 229);
+  color: rgb(69, 86, 197);
   text-align: center;
   font-size: 90px;
   padding: 0 20px;
@@ -60,6 +61,8 @@
   font-style: normal;
   font-size: 30px;
   text-align: center; 
+  padding: 10px;
+  background-color: rgb(191, 207, 223);
   
 }
 
@@ -169,8 +172,9 @@
   right: 10px;
 }
 
+
 .ucapan{
   text-align: center;
-  display: flex;
-}
+  background-color: rgb(191, 207, 223);
 
+}

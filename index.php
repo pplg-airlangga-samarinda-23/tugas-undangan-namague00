@@ -30,8 +30,8 @@
     </div>
     <div class="kata">
         <div class="lucu2"><img
-            src="https://www.weddingku.id/wp-content/themes/weddingku/images/separator_under_slider.png"
-            alt="------">
+                src="https://www.weddingku.id/wp-content/themes/weddingku/images/separator_under_slider.png"
+                alt="------">
         </div>
         <p>Minggu, 18 Agustus 2024</p>
         <p>12.15 Wit-Selesai</p>
@@ -42,10 +42,10 @@
         <h2>turut mengundang</h2>
         <li>keluarga mempelai pria</li>
         <li>keluarga mempelai wanita</li>
-        
+
 
     </div>
-    
+
     <div class="kimak">
         <iframe width="500" class="map" height="350"
             src="https://www.openstreetmap.org/export/embed.html?bbox=117.14464187622072%2C-0.4860426304653815%2C117.15154051780702%2C-0.4828884654224011&amp;layer=mapnik"
@@ -56,7 +56,7 @@
     </div>
     <div class="carousel">
         <div class="carousel-inner">
-            <img src="gambar1.jpg" alt="image 1" class="active" >
+            <img src="gambar1.jpg" alt="image 1" class="active">
             <img src="gambar2.jpeg" alt="image 2">
             <img src="gambar3.jpeg" alt="image 3">
         </div>
@@ -65,38 +65,45 @@
     </div>
     <div class="ucapan">
         <p>berikan ucapan dan doa</p>
-            <form action="insert.php" method="POST">
+        <form action="insert.php" method="POST">
+            <div>
                 <input type="text" name="nama" placeholder="nama" required> <br>
-                    <textarea name="ucapan" cols="30" row="4" placeholder="ucapan" required></textarea>
-                        <select name="keterangan" required>
-                            <option value="" selected disabled hidden>isi woii!!</option>
-                            <option value="1">ya</option>
-                            <option value="2">skip dulu</option>
-                            <option value="4">mungkin</option>
-                        </select> <br>
-                <button type="submit">KIRIM</button>
-            </form>
-    
-    <?php
+            </div>
+            <div>
+                <textarea name="ucapan" cols="30" row="4" placeholder="ucapan" required></textarea>
+            </div>
+            <div>
+                <select name="keterangan" required>
+                    <option value="" selected disabled hidden>isi woii!!</option>
+                    <option value="1">ya</option>
+                    <option value="2">skip dulu</option>
+                    <option value="4">mungkin</option>
+                </select> <br>
+            </div>
+            <button type="submit">KIRIM</button>
+        </form>
+
+        <?php
         include 'koneksi.php';
         $sql2 = "SELECT * FROM bukutamu ORDER BY id DESC";
-        $hasil =$connection -> query($sql2);
+        $hasil = $connection->query($sql2);
         ?>
-        <div style="height:100px; width: 200px; overflow:auto">
+        <div style="height:100px; width: 200px; overflow:auto; margin:auto;">
             <?php
-                while ($baris = $hasil-> fetch_row()) {
-                ?>
+            while ($baris = $hasil->fetch_row()) {
+            ?>
                 <div style="border-style:solid; border-color:grey;margin:10px;">
                     <p style="font-weight:bold"><?= $baris[1] ?></p>
-                    <p><?=$baris[2] ?></p>
-                    <p><?=$baris[3] ?> </p>
+                    <p><?= $baris[2] ?></p>
+                    <p><?= $baris[3] ?> </p>
                 </div>
-                
-                <?php
-                }
-                $hasil -> free_result();
-                ?>
-            </div>
+
+            <?php
+            }
+            $hasil->free_result();
+            ?>
+        </div>
     </div>
 </body>
+
 </html>
