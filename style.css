@@ -171,4 +171,6 @@
 
 .ucapan{
   text-align: center;
+  display: flex;
 }
+
